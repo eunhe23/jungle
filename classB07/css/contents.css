@@ -106,7 +106,7 @@ body{
 
 /* 모바일 적용 */
 @media all and (max-width:768px){
-    body{
+    body, html{
         padding: 0;
         height: 100%;
     }
@@ -123,5 +123,15 @@ body{
     .chat_wrap .inner{
         height: calc(100% - 110px);
     }
-
+    .chat_wrap .txt_area{
+        position: fixed;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+        background-color: #fff;
+    }
+    .chat_wrap .txt_area input{
+        height: 40px;
+        font-size: 15px;
+    }
 }
