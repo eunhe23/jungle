@@ -1,3 +1,5 @@
+var isIos = /iPhone|iPaD|iPodi.test(navigator.userAgent)
+
 $(function(){
     $(".txt_area input").keypress(function(e){
         // console.log(e.keyCode)
@@ -24,6 +26,21 @@ $(function(){
             },10)
         }
     });
+
+    /* 아이폰처리 */
+    if(isIos){
+        $(".txt_area input").focusion(function(){
+            setTimeout(function(){
+                $(".chat_wrap").addClass("keypad_on")
+                $("html").stop().animate({
+                    scrollTop:0
+                },10)
+            },30)
+        })
+        $(".txt_area input").focusion(function(){
+            $(".chat_wrap").remveClass("keypad_on")
+        })
+    }
 });
 
 /* 현재시간을 알아내고 값을 반환하는 함수 */
